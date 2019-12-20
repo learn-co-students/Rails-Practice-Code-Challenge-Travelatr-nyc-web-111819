@@ -1,0 +1,13 @@
+<h1><%= @post.title %></h1>
+
+<%= @post.title %>
+<hr>
+<%= @post.content %>
+<hr>
+Likes <%= @post.likes %><br><br>
+Blogger id <%= link_to @post.blogger_id, blogger_path(@post.blogger) %> |
+Destination id <%= link_to @post.destination_id, destination_path(@post.destination) %><br><br> 
+
+<%= button_to "LIKE", post_path(@post), method: :show %>
+
+<%= button_to "DELETE", post_path(@post), method: :delete %>

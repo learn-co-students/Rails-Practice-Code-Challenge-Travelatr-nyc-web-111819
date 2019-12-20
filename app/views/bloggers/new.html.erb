@@ -1,0 +1,20 @@
+<h1>Create A New Blogger</h1>
+
+<% if flash[:messages] %>
+    <font color="red"><h3>There were following errors:</h3></font>
+    <ul>
+    <% flash[:messages].each do |message| %>
+        <li><font color="red"><%= message %></font></li>
+    <% end %>
+    </ul>
+<% end %>
+
+<%= form_for @blogger do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br><br>
+    <%= f.label :age %>
+    <%= f.number_field :age %><br><br>
+    <%= f.label :bio %>
+    <%= f.text_area :bio %><br><br>
+    <%= f.submit %>
+<% end %>
